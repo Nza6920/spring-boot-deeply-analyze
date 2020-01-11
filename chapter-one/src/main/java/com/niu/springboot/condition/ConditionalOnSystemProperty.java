@@ -1,6 +1,5 @@
 package com.niu.springboot.condition;
 
-import org.springframework.boot.system.SystemProperties;
 import org.springframework.context.annotation.Conditional;
 
 import java.lang.annotation.*;

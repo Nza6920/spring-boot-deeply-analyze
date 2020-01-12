@@ -11,7 +11,7 @@
     <groupId>com.niu.springboot</groupId>
     <artifactId>chapter-two</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>chapter-two</name>
+    <name>autoconfigure</name>
     <description>SpringApplication analyze</description>
 
     <properties>

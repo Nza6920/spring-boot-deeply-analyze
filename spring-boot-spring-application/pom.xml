@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.niu.springboot</groupId>
-    <artifactId>chapter-one</artifactId>
+    <artifactId>spring-boot-spring-application</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>overview</name>
-    <description>automated assembly</description>
+    <name>spring-boot-spring-application</name>
+    <description>spring application anylize</description>
 
     <properties>
         <java.version>1.8</java.version>

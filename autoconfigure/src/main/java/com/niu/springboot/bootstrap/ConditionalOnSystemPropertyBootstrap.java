@@ -22,8 +22,8 @@ public class ConditionalOnSystemPropertyBootstrap {
     public static void main(String[] args) {
         // 开启上下文, 排除web容器
         ConfigurableApplicationContext context = new SpringApplicationBuilder(ConditionalOnSystemPropertyBootstrap.class)
-                .web(WebApplicationType.NONE)
-                .run(args);
+                                                    .web(WebApplicationType.NONE)
+                                                    .run(args);
 
         String helloWorld = context.getBean("helloWorld", String.class);
         System.out.println(helloWorld);

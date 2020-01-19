@@ -7,6 +7,8 @@
         <module>autoconfigure</module>
         <module>spring-boot-spring-application</module>
         <module>spring-web-mvc</module>
+        <module>springboot-webmvc</module>
+        <module>springboot-view</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -19,7 +21,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>dive-in-spring-boot</name>
     <description>Demo project for Spring Boot</description>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>

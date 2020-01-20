@@ -4,6 +4,7 @@ import com.niu.springboot.service.CalculateService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+
 /**
  * @Description: JAVA7 循环实现
  * @Author nza

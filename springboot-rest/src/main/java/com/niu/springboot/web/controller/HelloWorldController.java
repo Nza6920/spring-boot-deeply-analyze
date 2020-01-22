@@ -1,5 +1,6 @@
 package com.niu.springboot.web.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,11 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
  * @Author nza
  * @Date 2020/1/21
  **/
-@RestController
+@Controller
 public class HelloWorldController {
 
-    @GetMapping(value = "/hello-world")
-    public String helloWorld(@RequestParam(required = false) String message) {
-        return "Hello World!" + message;
+    @GetMapping(value = "/index")
+    public String index() {
+        return "index";
     }
 }

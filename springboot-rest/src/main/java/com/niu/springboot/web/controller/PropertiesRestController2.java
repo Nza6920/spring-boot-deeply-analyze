@@ -1,17 +1,16 @@
 package com.niu.springboot.web.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Properties;
 
 /**
- * @Description: PropertiesRestController
+ * @Description: PropertiesRestController2
  * @Author nza
  * @Date 2020/1/22
  **/
-@RestController
+@Controller
 public class PropertiesRestController2 {
 
     @PostMapping(value = "/add/props2",

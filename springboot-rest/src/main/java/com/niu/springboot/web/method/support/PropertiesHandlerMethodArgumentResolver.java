@@ -1,19 +1,16 @@
 package com.niu.springboot.web.method.support;
 
+import com.niu.springboot.web.http.converter.properties.PropertiesHttpMessageConverter;
 import org.springframework.core.MethodParameter;
-import org.springframework.http.MediaType;
+import org.springframework.http.HttpInputMessage;
+import org.springframework.http.server.ServletServerHttpRequest;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.context.request.ServletWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 
-import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
-import java.awt.*;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.Charset;
 import java.util.Properties;
 
 /**
@@ -36,21 +33,10 @@ public class PropertiesHandlerMethodArgumentResolver implements HandlerMethodArg
         ServletWebRequest servletWebRequest = (ServletWebRequest) webRequest;
         HttpServletRequest request = servletWebRequest.getRequest();
 
-        // 获取字符集
-        String contentType = request.getHeader("Content-Type");
-        MediaType mediaType = MediaType.parseMediaType(contentType);
-        Charset charset = mediaType.getCharset();
-        charset = charset == null ? Charset.forName("UTF-8") : charset;
+        // 复用 PropertiesHttpMessageConverter
+        PropertiesHttpMessageConverter converter = new PropertiesHttpMessageConverter();
+        HttpInputMessage inputMessage = new ServletServerHttpRequest(request);
 
-        // 请求输入字节流
-        InputStream inputStream = request.getInputStream();
-        // 转换为字符流
-        InputStreamReader reader = new InputStreamReader(inputStream, charset);
-
-        // 加载字符流成为 properties 对象
-        Properties properties = new Properties();
-        properties.load(reader);
-
-        return properties;
+        return converter.read(null, null, inputMessage);
     }
 }
